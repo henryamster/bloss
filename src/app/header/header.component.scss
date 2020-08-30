@@ -1,0 +1,22 @@
+.headerBar {
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:red;
+  .alert{
+    padding:8px;
+
+  }
+}
+
+#topBar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 3px 3px 3.5em;
+  }
+
+  .headerWelcome{
+    margin: 8px;
+  }

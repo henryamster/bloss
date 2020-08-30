@@ -1,0 +1,19 @@
+#topBar{
+display:flex;
+justify-content: space-between;
+align-items: center;
+padding: 3px 3px 3px 3.5em;
+}
+
+.container{
+  min-height: 80vh;
+}
+
+.small-toolbar{
+  height: 35px;
+}
+
+
+.large-toolbar{
+  height: 55px;
+}

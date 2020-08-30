@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "bloss",
+      "public": "dist/bloss",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

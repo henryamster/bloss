@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bloss-15c45": {
+      "hosting": {
+        "bloss": [
+          "bloss-15c45"
+        ]
+      }
+    }
+  }
+}

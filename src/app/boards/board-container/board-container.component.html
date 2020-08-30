@@ -1,0 +1,10 @@
+<div id="boardContainer" class="mat-elevation-z4">
+  <h1>
+    Message Boards
+  </h1>
+  <div class="showBoards" *ngFor="let collection of collections | async">
+    <div class="showBoard" *ngIf="collection.Name">
+      <app-board-item [collection]="collection"></app-board-item>
+    </div>
+  </div>
+</div>
