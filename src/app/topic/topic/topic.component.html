@@ -1,0 +1,22 @@
+<div class="loader" *ngIf="!loading; else elseTemplate ">
+  <div class="topicContainer">
+    <div class="notFound" *ngIf="topicNotFound">
+      <h1>Sorry, this content is not available</h1>
+      <p>This content either does not exist or is not available at this time.</p>
+    </div>
+
+    <div class="topic" *ngIf="!topicNotFound">
+      <h1>{{(topic | async)?.topic}}</h1>
+      <h3>Posted by: </h3> {{authorName }}
+      <p>{{authorDetails | json}}</p>
+      <p>{{(topic | async)?.content}}</p>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #elseTemplate>
+  <h1>Loading...</h1>
+  <mat-progress-bar></mat-progress-bar>
+</ng-template>
+

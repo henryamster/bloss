@@ -1,7 +1,7 @@
 export class Collection{
   id: string;
-  Description:string;
-  Name: string;
+  description:string;
+  name: string;
   image: string;
   url: string;
 }

@@ -56,6 +56,8 @@ import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { TopicSingleComponent } from './topic/topic-single/topic-single.component';
+import { TopicComponent } from './topic/topic/topic.component';
 
 
 @NgModule({
@@ -68,7 +70,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BoardContainerComponent,
     BoardItemComponent,
     BoardComponent,
-    BoardSingleComponent
+    BoardSingleComponent,
+    TopicSingleComponent,
+    TopicComponent
 
   ],
   imports: [

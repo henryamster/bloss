@@ -19,7 +19,7 @@ export class BoardItemComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.boards = this.firestore.collection('Boards', ref => ref.where('ParentCategory', '==', this.collection.id)).valueChanges();
+    this.boards = this.firestore.collection('Boards', ref => ref.where('parentCategory', '==', this.collection.id)).valueChanges();
 
   }
 

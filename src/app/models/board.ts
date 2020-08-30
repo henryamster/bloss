@@ -1,7 +1,7 @@
 export class Board{
-  Description: string;
-Name: string;
-ParentCategory: string;
+description: string;
+name: string;
+parentCategory: string;
 url: string;
 id:string;
 }

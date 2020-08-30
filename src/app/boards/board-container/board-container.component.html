@@ -3,7 +3,7 @@
     Message Boards
   </h1>
   <div class="showBoards" *ngFor="let collection of collections | async">
-    <div class="showBoard" *ngIf="collection.Name">
+    <div class="showBoard" *ngIf="collection.name">
       <app-board-item [collection]="collection"></app-board-item>
     </div>
   </div>

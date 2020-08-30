@@ -15,6 +15,7 @@ export class BoardComponent implements OnInit {
   isCategoryView = false;
   collections: Observable<any[]>;
   boards: Observable<any[]>;
+  topics: Observable<any[]>;
   ngOnInit(): void {
 
 
@@ -29,18 +30,23 @@ export class BoardComponent implements OnInit {
         this.isCategoryView = true;
         // Gather one category that matches routename
         this.collections = this.firestore.collection('Categories',
-    ref => ref.where( 'Name', '==', this.params.category))
+    ref => ref.where( 'name', '==', this.params.category))
     .valueChanges({idField: 'id'});
         console.log([this.collections, this.params.category]);
       }
 
       else{
         this.boards = this.firestore.collection('Boards',
-        ref => ref.where( 'Name', '==', this.params.board))
+        ref => ref.where( 'name', '==', this.params.board))
         .valueChanges({idField: 'id'});
+
+        this.boards.subscribe(x => {
+         x.forEach(x => { this.topics = this.firestore.collection('Posts', ref => ref.where('board', '==', x.id)).valueChanges({idField: 'id'});
+         });
+        });
       }
 
-    })
+    });
 
 
 

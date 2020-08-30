@@ -11,8 +11,15 @@
 
   <div class="board"  *ngFor="let board of boards | async">
     <div class="boardHeader mat-elevation-z2">
-      <h1>{{board.Name}}</h1>
+      <h1>{{board.name}}</h1>
+      <p>{{board.description}}</p>
+
+      <div class="topic-container" *ngFor="let topic of topics | async">
+        <app-topic-single [topic]="topic"></app-topic-single>
+      </div>
     </div>
   </div>
+
+
 
 </div>

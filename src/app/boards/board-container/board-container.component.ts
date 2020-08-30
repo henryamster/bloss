@@ -14,7 +14,6 @@ export class BoardContainerComponent implements OnInit {
     this.collections = firestore.collection('Categories').valueChanges({idField: 'id'});
   }
 
-
   ngOnInit(): void {
 console.log(this.collections)
 
