@@ -1,13 +1,23 @@
 <div class="board">
 
+
+
   <!--Logic for handling Category view-->
   <div class="checkView" *ngIf="isCategoryView">
+    <div class="breadcrumb">
+      <a href="/forum"> Forum </a> > <a [href]="'forum/' + params.category" >{{params.category}} </a> >
+    </div>
     <div class="boards" *ngFor="let collection of collections | async">
       <app-board-item [collection]="collection"></app-board-item>
     </div>
   </div>
 
   <!--Board -->
+
+  <div class="breadcrumb" *ngIf="!isCategoryView">
+   <a href="/forum"> Forum </a> > <a [href]="'forum/' + params.category" >{{params.category}} </a> >
+     <a [href]="'forum/' + params.category + '/' + params.board" >{{params.board}} </a>
+  </div>
 
   <div class="board"  *ngFor="let board of boards | async">
     <div class="boardHeader mat-elevation-z2">

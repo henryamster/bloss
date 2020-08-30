@@ -15,6 +15,4 @@ export class UserService {
     return (await ref).get('handle');
 }
 
-
-
 }

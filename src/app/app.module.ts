@@ -58,6 +58,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TopicSingleComponent } from './topic/topic-single/topic-single.component';
 import { TopicComponent } from './topic/topic/topic.component';
+import { CommentComponent } from './comment/comment/comment.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { TopicComponent } from './topic/topic/topic.component';
     BoardComponent,
     BoardSingleComponent,
     TopicSingleComponent,
-    TopicComponent
+    TopicComponent,
+    CommentComponent
 
   ],
   imports: [

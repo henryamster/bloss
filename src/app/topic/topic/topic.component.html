@@ -6,11 +6,22 @@
     </div>
 
     <div class="topic" *ngIf="!topicNotFound">
+
+      <div class="breadcrumb" >
+        <a href="/forum"> Forum </a> > <a [href]="'forum/' + params.category" >{{params.category}} </a> >
+         <a  [href]="'forum/' + params.category + '/' + params.board" >{{params.board}} </a> >
+         <a [href]="'forum/' + params.category + '/' + params.board + '/' + params.post" >{{params.post}} </a>
+      </div>
+
       <h1>{{(topic | async)?.topic}}</h1>
       <h3>Posted by: </h3> {{authorName }}
       <p>{{authorDetails | json}}</p>
       <p>{{(topic | async)?.content}}</p>
     </div>
+  </div>
+
+  <div class="commentContainer" *ngFor="let comment of comments | async ">
+    <app-comment [comment]="comment" [params]="params"></app-comment>
   </div>
 
 </div>
