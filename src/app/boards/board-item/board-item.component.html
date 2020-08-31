@@ -1,10 +1,9 @@
-<div class="collectionContainer mat-elevation-z6" >
+<div class="collectionContainer " >
   <!-- <img   [src]="collection.image" alt=""> -->
   <a [href]="'/forum/' + collection.url">
   <h2>{{collection.name}}</h2>
 </a>
   <p>{{collection.description}}</p>
-  {{collection.id}}
 
   <div class="boardsInCategory" *ngFor="let board of boards | async">
     <div class="showBoard" *ngIf="board.name">

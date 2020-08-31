@@ -1,4 +1,15 @@
-<div id="boardContainer" class="mat-elevation-z4">
+<div id="boardContainer" >
+
+  <div class="loading" *ngIf="loading">
+
+    <h1>
+      Loading...
+    </h1>
+    <mat-progress-bar></mat-progress-bar>
+  </div>
+  <div *ngIf="!loading">
+
+
   <h1>
     Message Boards
   </h1>
@@ -7,4 +18,8 @@
       <app-board-item [collection]="collection"></app-board-item>
     </div>
   </div>
+  </div>
 </div>
+
+
+

@@ -1,0 +1,6 @@
+#boardContainer{
+  max-width:80%;
+  min-width:350px;
+  margin-left:10%;
+  padding: 12px;
+}

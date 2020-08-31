@@ -9,16 +9,29 @@ import { UserService } from 'src/app/Controllers/user.service';
 })
 export class CommentComponent implements OnInit {
   authorName;
+  authorUrl;
+  authorAvatar;
   @Input() comment: Comment;
   @Input() params;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.getName(this.comment.author).then(x => (this.authorName = x));
-    console.log(this.params)
+    this.getUrl(this.comment.author).then(x => (this.authorUrl = x));
+    this.getAvatar(this.comment.author).then(x => (this.authorAvatar = x));
+    console.log(this.params);
   }
 
   async getName(id: string) {
     return await this.userService.getUserNameById(id).then((x) => x);
+  }
+
+  async getUrl(id: string) {
+    return await this.userService.getUserUrlById(id).then((x) => x);
+  }
+
+
+  async getAvatar(id: string) {
+    return await this.userService.getAviById(id).then((x) => x);
   }
 }

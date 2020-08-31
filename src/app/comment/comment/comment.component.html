@@ -1,6 +1,6 @@
 <div class="commentContainer">
   <div class="comment mat-elevation-z2" [id]="comment.id">
-    <h5>{{authorName}}</h5>
+    <h5><a [href]="'profile/' + authorUrl"> <img [src]="authorAvatar" class="avatar">{{authorName}}</a></h5>
     <p>Posted on: {{comment.posted}}</p>
    <a [href]="'forum/' + params.category + '/' + params.board + '/' + params.post + '#' + comment.id">
      <p>postId: {{comment.id}}</p></a>

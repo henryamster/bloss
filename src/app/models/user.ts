@@ -1,9 +1,10 @@
 export class User{
   avatar: string;
-date: Date;
+date: any;
 email: string;
 groups: string[];
 handle: string;
 profile: string;
 userType: string;
+url: string;
 }

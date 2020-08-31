@@ -1,4 +1,15 @@
 <div class="board">
+  <div class="loading" *ngIf="loading">
+
+    <h1>
+      Loading...
+    </h1>
+    <mat-progress-bar></mat-progress-bar>
+  </div>
+<div *ngIf="!loading">
+
+
+
 
 
 
@@ -20,16 +31,16 @@
   </div>
 
   <div class="board"  *ngFor="let board of boards | async">
-    <div class="boardHeader mat-elevation-z2">
+    <div class="boardHeader">
       <h1>{{board.name}}</h1>
       <p>{{board.description}}</p>
 
-      <div class="topic-container" *ngFor="let topic of topics | async">
+      <div class="topic-container " *ngFor="let topic of topics | async">
         <app-topic-single [topic]="topic"></app-topic-single>
       </div>
     </div>
   </div>
 
 
-
+</div>
 </div>

@@ -1,0 +1,10 @@
+<div class="profileContainer">
+  <div class="profile" *ngFor="let profile of profiles | async">
+    <h1><img [src]="profile.avatar" class="avatar">  {{profile.handle}}</h1>
+    <h3>
+     <a [href]="'http://' + userUrlBase + 'profile/' + profile.url">{{ 'http://' + userUrlBase + profile.url }}</a>
+    </h3>
+    <p>{{profile.profile}}</p>
+
+  </div>
+</div>

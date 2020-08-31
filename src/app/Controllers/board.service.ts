@@ -14,7 +14,7 @@ export class BoardService {
 console.log('added Collection');
     }).catch (x => {
 console.log('There was an error adding colection');
-    })
+    });
   }
 
 }

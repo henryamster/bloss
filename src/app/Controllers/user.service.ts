@@ -15,4 +15,14 @@ export class UserService {
     return (await ref).get('handle');
 }
 
+  async getUserUrlById(id: string){
+    const ref = this.firestore.doc<User>('Users/' + id).ref.get();
+    return (await ref).get('url');
+  }
+
+  async getAviById(id: string){
+    const ref = this.firestore.doc<User>('Users/' + id).ref.get();
+    return (await ref).get('avatar');
+  }
+
 }

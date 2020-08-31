@@ -1,5 +1,5 @@
 <div class="topicSingle">
  <a [href]="'forum/' + params.category + '/' + params.board + '/' + topic.id"><h4>{{topic.topic}}</h4></a>
   <p>{{topic.content}}</p>
-  <em>Posted on: {{topic.date}} by {{topic.author}}</em>
+  <em>Posted on: {{topic.date.toDate() |  date:'yyyy/MM/dd h:mm:ss a'}} by <a [href]="'profile/' + authorUrl">{{authorName}}</a></em>
 </div>

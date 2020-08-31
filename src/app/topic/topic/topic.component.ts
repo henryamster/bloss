@@ -31,7 +31,8 @@ export class TopicComponent implements OnInit {
   topicDoc;
   loading = true;
   authorName;
-  authorDetails;
+  authorUrl;
+  authorAvatar;
   topicId;
   comments: Observable<any[]>;
 
@@ -42,8 +43,10 @@ export class TopicComponent implements OnInit {
       } else {
         this.topicNotFound = false;
         this.topicId = x.id;
-        console.log(x)
+
         this.getName(x.author).then(x => (this.authorName = x));
+        this.getUrl(x.author).then(x => (this.authorUrl = x));
+        this.getAvatar(x.author).then(x => (this.authorAvatar = x));
       }
       this.loading = false;
     });
@@ -63,6 +66,14 @@ export class TopicComponent implements OnInit {
 
   async getName(id: string) {
     return await this.userService.getUserNameById(id).then((x) => x);
+  }
+
+  async getUrl(id: string) {
+    return await this.userService.getUserUrlById(id).then((x) => x);
+  }
+
+  async getAvatar(id: string) {
+    return await this.userService.getAviById(id).then((x) => x);
   }
 
 }

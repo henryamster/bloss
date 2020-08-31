@@ -1,6 +1,6 @@
 export class Collection{
   id: string;
-  description:string;
+  description: string;
   name: string;
   image: string;
   url: string;

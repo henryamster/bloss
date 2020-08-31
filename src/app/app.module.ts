@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-//Angular Material Components
+// Angular Material Components
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
@@ -38,7 +38,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
-//Content
+// Content
 import {AppRoutingModule} from './routing/routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -51,14 +51,17 @@ import { BoardItemComponent } from './boards/board-item/board-item.component';
 import { BoardSingleComponent } from './boards/board/board-single.component';
 import { BoardComponent} from './board/board/board.component';
 
-//Dependencies
-import {AngularFireModule} from "@angular/fire";
-import {environment} from "../environments/environment";
+// Dependencies
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TopicSingleComponent } from './topic/topic-single/topic-single.component';
 import { TopicComponent } from './topic/topic/topic.component';
 import { CommentComponent } from './comment/comment/comment.component';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { PostBarComponent } from './topic/post-bar/post-bar.component';
+
 
 
 @NgModule({
@@ -74,7 +77,10 @@ import { CommentComponent } from './comment/comment/comment.component';
     BoardSingleComponent,
     TopicSingleComponent,
     TopicComponent,
-    CommentComponent
+    CommentComponent,
+    ProfileComponent,
+    PostBarComponent,
+
 
   ],
   imports: [

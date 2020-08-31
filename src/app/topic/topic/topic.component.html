@@ -14,8 +14,7 @@
       </div>
 
       <h1>{{(topic | async)?.topic}}</h1>
-      <h3>Posted by: </h3> {{authorName }}
-      <p>{{authorDetails | json}}</p>
+      <h3> Posted by: <a [href]="'profile/' + authorUrl"> <img [src]="authorAvatar" class="avatar"> {{authorName }}</a></h3>
       <p>{{(topic | async)?.content}}</p>
     </div>
   </div>
@@ -23,6 +22,7 @@
   <div class="commentContainer" *ngFor="let comment of comments | async ">
     <app-comment [comment]="comment" [params]="params"></app-comment>
   </div>
+  <app-post-bar></app-post-bar>
 
 </div>
 

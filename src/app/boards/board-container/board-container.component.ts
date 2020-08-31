@@ -14,11 +14,13 @@ export class BoardContainerComponent implements OnInit {
     this.collections = firestore.collection('Categories').valueChanges({idField: 'id'});
   }
 
+  loading = true;
   ngOnInit(): void {
-console.log(this.collections)
+ this.loading = false;
 
   }
 }
+
 
 
 

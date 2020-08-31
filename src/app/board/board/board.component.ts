@@ -16,6 +16,7 @@ export class BoardComponent implements OnInit {
   collections: Observable<any[]>;
   boards: Observable<any[]>;
   topics: Observable<any[]>;
+  loading = true;
   ngOnInit(): void {
 
 
@@ -32,7 +33,7 @@ export class BoardComponent implements OnInit {
         this.collections = this.firestore.collection('Categories',
     ref => ref.where( 'name', '==', this.params.category))
     .valueChanges({idField: 'id'});
-        console.log([this.collections, this.params.category]);
+        this.loading = false;
       }
 
       else{
@@ -42,14 +43,12 @@ export class BoardComponent implements OnInit {
 
         this.boards.subscribe(x => {
          x.forEach(x => { this.topics = this.firestore.collection('Posts', ref => ref.where('board', '==', x.id)).valueChanges({idField: 'id'});
-         });
+                          this.loading = false;
+        });
         });
       }
 
     });
-
-
-
 
 
   }
