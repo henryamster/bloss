@@ -1,5 +1,7 @@
 <div class="postBar">
   <div class="button-container">
-    <a mat-button (click)="openPostBay()">Post a reply </a>
+    <quill-editor  format="html" #quillEd></quill-editor>
+    <a mat-button  (click)="openPostBay()">Post reply </a>
+
   </div>
 </div>

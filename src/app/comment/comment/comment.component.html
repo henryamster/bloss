@@ -1,10 +1,15 @@
 <div class="commentContainer">
   <div class="comment mat-elevation-z2" [id]="comment.id">
-    <h5><a [href]="'profile/' + authorUrl"> <img [src]="authorAvatar" class="avatar">{{authorName}}</a></h5>
-    <p>Posted on: {{comment.posted}}</p>
-   <a [href]="'forum/' + params.category + '/' + params.board + '/' + params.post + '#' + comment.id">
-     <p>postId: {{comment.id}}</p></a>
+    <a [href]="'forum/' + params.category + '/' + params.board + '/' + params.post + '#' + comment.id">
+      <p class="postId">{{comment.id}}</p></a>
 
-    <p>{{comment.post}}</p>
+    <h5 class="aviHeader"><a [href]="'profile/' + authorUrl"> <img [src]="authorAvatar" class="avatar">{{authorName}}</a></h5>
+    <p>Posted on: {{comment.posted.toDate() |  date:'yyyy/MM/dd h:mm:ss a'}}</p>
+
+
+     <quill-view  [content]="comment.post" format="html" theme="snow"></quill-view>
+     <hr>
+     <quill-view  [content]="authorSignature" format="html" theme="snow"></quill-view>
+    <!-- <p>{{comment.post}}</p> -->
   </div>
 </div>

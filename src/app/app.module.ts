@@ -50,18 +50,19 @@ import { BoardContainerComponent } from './boards/board-container/board-containe
 import { BoardItemComponent } from './boards/board-item/board-item.component';
 import { BoardSingleComponent } from './boards/board/board-single.component';
 import { BoardComponent} from './board/board/board.component';
-
-// Dependencies
-import {AngularFireModule} from '@angular/fire';
-import {environment} from '../environments/environment';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TopicSingleComponent } from './topic/topic-single/topic-single.component';
 import { TopicComponent } from './topic/topic/topic.component';
 import { CommentComponent } from './comment/comment/comment.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { PostBarComponent } from './topic/post-bar/post-bar.component';
 
+// Dependencies
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { QuillModule } from 'ngx-quill';
+import {Quill} from 'quill';
 
 
 @NgModule({
@@ -124,7 +125,8 @@ import { PostBarComponent } from './topic/post-bar/post-bar.component';
     MatPaginatorModule,
     RouterModule,
     LayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QuillModule.forRoot()
   ],
   providers: [AppRoutingModule],
   bootstrap: [AppComponent]

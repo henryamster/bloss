@@ -25,4 +25,9 @@ export class UserService {
     return (await ref).get('avatar');
   }
 
+  async getSignatureById(id: string){
+    const ref = this.firestore.doc<User>('Users/' + id).ref.get();
+    return (await ref).get('signature');
+  }
+
 }

@@ -7,4 +7,5 @@ handle: string;
 profile: string;
 userType: string;
 url: string;
+signature: string;
 }

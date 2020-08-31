@@ -33,6 +33,7 @@ export class TopicComponent implements OnInit {
   authorName;
   authorUrl;
   authorAvatar;
+  authorSignature;
   topicId;
   comments: Observable<any[]>;
 
@@ -47,6 +48,7 @@ export class TopicComponent implements OnInit {
         this.getName(x.author).then(x => (this.authorName = x));
         this.getUrl(x.author).then(x => (this.authorUrl = x));
         this.getAvatar(x.author).then(x => (this.authorAvatar = x));
+        this.getSignature(x.author).then(x => (this.authorSignature = x));
       }
       this.loading = false;
     });
@@ -74,6 +76,10 @@ export class TopicComponent implements OnInit {
 
   async getAvatar(id: string) {
     return await this.userService.getAviById(id).then((x) => x);
+  }
+
+  async getSignature(id: string) {
+    return await this.userService.getSignatureById(id).then((x) => x);
   }
 
 }

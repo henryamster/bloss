@@ -4,7 +4,8 @@
     <h3>
      <a [href]="'http://' + userUrlBase + 'profile/' + profile.url">{{ 'http://' + userUrlBase + profile.url }}</a>
     </h3>
-    <p>{{profile.profile}}</p>
+    <quill-view #quill [content]="profile.profile" format="html" theme="snow"></quill-view>
+    <!-- <p>{{profile.profile}}</p> -->
 
   </div>
 </div>
