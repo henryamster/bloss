@@ -63,6 +63,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { QuillModule } from 'ngx-quill';
 import {Quill} from 'quill';
+import { RecentPostsComponent } from './profile/recent-posts/recent-posts.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import {Quill} from 'quill';
     CommentComponent,
     ProfileComponent,
     PostBarComponent,
+    RecentPostsComponent,
 
 
   ],

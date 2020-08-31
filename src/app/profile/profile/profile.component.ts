@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { User } from 'src/app/models/user';
 import { Observable } from 'rxjs';
 import {environment } from '../../../environments/environment';
-import { QuillEditorComponent } from 'ngx-quill';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -26,9 +24,12 @@ export class ProfileComponent implements OnInit {
      params;
      userUrlBase = environment.url;
      profiles: Observable<any[]>;
+     posts: Observable<any[]>;
+     comments: Observable<any[]>;
+
 
   ngOnInit(): void {
 
-  }
+    }
 
 }

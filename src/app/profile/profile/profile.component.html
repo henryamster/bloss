@@ -6,6 +6,8 @@
     </h3>
     <quill-view #quill [content]="profile.profile" format="html" theme="snow"></quill-view>
     <!-- <p>{{profile.profile}}</p> -->
+<hr>
+<app-recent-posts [authorId]="profile.id"></app-recent-posts>
 
   </div>
 </div>

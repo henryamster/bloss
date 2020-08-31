@@ -1,0 +1,5 @@
+.post, .comment{
+  margin-left: 20px;
+  padding: 8px;
+  background-color: #eee;
+}
