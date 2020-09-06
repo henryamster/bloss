@@ -1,6 +1,11 @@
 .commentContainer{
   padding-left:20px;
 }
+.comment{
+  padding: 0 6px 6px 6px;
+  margin: 12px;
+  border-radius: 8px 4px;
+}
 
 .avatar{
   width:35px;

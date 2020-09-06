@@ -1,2 +1,27 @@
-<p>home works!</p>
+<h1 class="title">Login</h1>
+
+<div class="loginForm">
+  <form formGroup="loginForm">
+    <div class="loginInputs">
+
+
+
+      <mat-form-field class="example-full-width" formControlName="email">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="test@email.com" type="email" name="email" id="email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" formControlName="password">
+      <mat-label>Password</mat-label>
+        <input matInput  type="password" name="password" id="password">
+      </mat-form-field>
+    </div>
+
+    <div class="loginActions">
+      <button mat-button [click]="login()">Login</button>
+      <button mat-button>Reset Password</button>
+      <button mat-button>Sign Up</button>
+    </div>
+  </form>
+</div>
 

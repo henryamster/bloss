@@ -10,9 +10,8 @@ export class PostBarComponent implements OnInit {
   @ViewChild('quill')
   quillEd: QuillEditorComponent;
   constructor() { }
-value;
   openPostBay(){
-    this.quillEd?.onContentChanged.forEach(x=>console.log(x));
+
   }
   ngOnInit(): void {
     this.quillEd?.onContentChanged.forEach(x=>console.log(x));

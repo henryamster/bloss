@@ -30,4 +30,14 @@ export class UserService {
     return (await ref).get('signature');
   }
 
+  async addUser(uid){
+    const emptyUserProfile = new User();
+    emptyUserProfile.userId = uid;
+    const ref = this.firestore.collection('Users').add(emptyUserProfile)
+    .then(x =>
+      console.log('Successfully create user profile')
+    ).catch (x=>
+    console.log(`There was an error: ${x}`)
+    );
+  }
 }

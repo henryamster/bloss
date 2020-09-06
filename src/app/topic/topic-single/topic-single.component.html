@@ -1,5 +1,6 @@
 <div class="topicSingle">
  <a [href]="'forum/' + params.category + '/' + params.board + '/' + topic.id"><h4>{{topic.topic}}</h4></a>
-  <p>{{topic.content}}</p>
+  <!-- <p>{{topic.content}}</p> -->
+  <quill-view-html [content]="topic.content"></quill-view-html>
   <em>Posted on: {{topic.date.toDate() |  date:'yyyy/MM/dd h:mm:ss a'}} by <a [href]="'profile/' + authorUrl">{{authorName}}</a></em>
 </div>

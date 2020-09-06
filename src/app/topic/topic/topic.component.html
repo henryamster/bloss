@@ -16,7 +16,7 @@
       <h1>{{(topic | async)?.topic}}</h1>
       <h3> Posted by: <a [href]="'profile/' + authorUrl"> <img [src]="authorAvatar" class="avatar"> {{authorName }}</a></h3>
       <p>on {{(topic | async)?.date.toDate() |  date:'yyyy/MM/dd h:mm:ss a'}}</p>
-      <quill-view [content]="(topic | async)?.content" format="text" theme="snow"></quill-view>
+      <quill-view [content]="(topic | async)?.content" format="html" theme="snow"></quill-view>
       <hr>
       <quill-view  [content]="authorSignature" format="html" theme="snow"></quill-view>
        <!-- <p>{{(topic | async)?.content}}</p> -->

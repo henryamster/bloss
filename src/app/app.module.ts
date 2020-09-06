@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -55,7 +57,7 @@ import { TopicComponent } from './topic/topic/topic.component';
 import { CommentComponent } from './comment/comment/comment.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { PostBarComponent } from './topic/post-bar/post-bar.component';
-
+import { RecentPostsComponent } from './profile/recent-posts/recent-posts.component';
 // Dependencies
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
@@ -63,7 +65,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { QuillModule } from 'ngx-quill';
 import {Quill} from 'quill';
-import { RecentPostsComponent } from './profile/recent-posts/recent-posts.component';
+
 
 
 @NgModule({
@@ -88,6 +90,8 @@ import { RecentPostsComponent } from './profile/recent-posts/recent-posts.compon
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
