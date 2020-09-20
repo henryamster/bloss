@@ -1,26 +1,26 @@
 <h1 class="title">Login</h1>
 
 <div class="loginForm">
-  <form formGroup="loginForm">
+  <form [formGroup]="loginForm">
     <div class="loginInputs">
 
+<p *ngFor="let handle of handles | async">{{ handle.handle}}</p>
 
-
-      <mat-form-field class="example-full-width" formControlName="email">
+      <mat-form-field class="example-full-width" >
         <mat-label>Email</mat-label>
-        <input matInput placeholder="test@email.com" type="email" name="email" id="email">
+        <input matInput placeholder="test@email.com" type="email" name="email" id="email" formControlName="email">
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" formControlName="password">
+      <mat-form-field class="example-full-width" >
       <mat-label>Password</mat-label>
-        <input matInput  type="password" name="password" id="password">
+        <input matInput  type="password" name="password" id="password" formControlName="password">
       </mat-form-field>
     </div>
 
     <div class="loginActions">
-      <button mat-button [click]="login()">Login</button>
-      <button mat-button>Reset Password</button>
-      <button mat-button>Sign Up</button>
+      <button mat-button (click)="login()">Login</button>
+      <button mat-button (click)="authCheck()">Reset Password</button>
+      <button mat-button (click)="create()">Sign Up</button>
     </div>
   </form>
 </div>

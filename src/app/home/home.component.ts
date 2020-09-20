@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../Controllers/auth.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../Controllers/user.service';
 
 @Component({
   selector: 'app-home',
@@ -12,24 +13,35 @@ import { FormBuilder } from '@angular/forms';
 export class HomeComponent implements OnInit {
   items: Observable<any[]>;
   constructor(firestore: AngularFirestore,
-              private auth: AuthService,
-              private fb: FormBuilder) {
+              public auth: AuthService,
+              private fb: FormBuilder,
+              private user: UserService) {
     this.items = firestore.collection('items').valueChanges();
   }
- loginForm;
+ loginForm: FormGroup;
+
+ handles = this.user.getUserByUserId(this.auth.user.uid);
+ //this.auth.user.subscribe(x=> this.user.getUserByUserId(x.uid))
+
   ngOnInit(): void {
+
+    this.auth.authCheck();
     this.loginForm = this.fb.group({
-      email: [''],
-      password: [''],
+      email: ["", Validators.email],
+      password: ["", Validators.minLength(8)],
     });
   }
 
-
+  async authCheck(){
+    this.auth.authCheck()
+  }
 
   async login(){
-    let userName = this.loginForm
-    console.log(this.loginForm)
-   // this.auth.login();
+    this.auth.login(this.loginForm.get('email').value, this.loginForm.get('password').value);
+  }
+
+  async create(){
+    this.auth.signup(this.loginForm.get('email').value, this.loginForm.get('password').value);
   }
    }
 

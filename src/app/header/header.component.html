@@ -9,8 +9,9 @@
     <div class='headerWelcome'>
       <div class="icon">
 
+        <span *ngIf="auth.user | async">{{ (auth.user | async)?.email }}</span> |
+        <a mat-button *ngIf="auth.user | async" (click)="logOut()">log out </a>
 
-        test@user.com | logout
 
 
       </div>
