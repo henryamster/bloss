@@ -1,3 +1,9 @@
 .board{
-  padding-left:10px;
+  line-height: 10px;
+  margin-left: 13px;
+  background: linear-gradient(-55deg, #c3c3c396, #d6c5c5a6);
+  padding: 6px 0 18px 61px;
+  margin: 17px 0 20px 14px;
+  border-radius: 49px 0px 0px 43px;
+  box-shadow: 6px 2px 8px #888888b3;
 }

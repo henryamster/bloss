@@ -7,6 +7,10 @@ padding: 3px 3px 3px 3.5em;
 
 .container{
   min-height: 80vh;
+  background: linear-gradient(25deg, #dacfcf63, #bbbbbb63);
+
+  color: #717171;
+  text-shadow: 2px 3px 4px #80808075;
 }
 
 .small-toolbar{
@@ -16,4 +20,17 @@ padding: 3px 3px 3px 3.5em;
 
 .large-toolbar{
   height: 55px;
+}
+
+.white-text {
+  color: #777777;
+}
+.salmon-bg {
+  background: linear-gradient(#e4dddd,#989898);
+}
+.sidenav-container{
+  background: linear-gradient(25deg, #dacfcf63, #bbbbbb63);
+ 
+  color: #717171;
+  text-shadow: 2px 3px 4px #80808075;
 }

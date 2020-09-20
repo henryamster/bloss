@@ -9,7 +9,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$bloss-primary: mat-palette($mat-yellow);
+$bloss-primary: mat-palette($mat-grey);
 $bloss-accent:  mat-palette($mat-brown, A200, A100, A400);
 
 
@@ -38,6 +38,18 @@ $custom-typography: mat-typography-config(
   font-family: 'Nunito';
 }
 
+a{
+  color:rgb(110, 99, 99);
+  &:visited{
+    color:rgb(131, 130, 130);
+  }
+  &:active{
+    color:rgb(105, 98, 98);
+  }
+  &:hover{
+    color:rgb(99, 99, 104);
+  }
+}
 
 .serif{
   font-family: 'Mirza', cursive;

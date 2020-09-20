@@ -3,3 +3,21 @@
   max-height: 40px;
   border-radius: 100%;
 }
+
+.breadcrumb{
+  margin: 12px;
+  padding: 3px;
+}
+.breadcrumb a {
+  border-radius: 16px;
+  padding: 5px;
+  margin: 3px;
+  font-size: 12px;
+  letter-spacing: 0px;
+  background: linear-gradient(-13deg, #c3a4a4db, #675e5e6e);
+  color: #e0e0d8;
+  text-shadow: 2px 3px 2px #80808075;
+  box-shadow: 1px 3px 4px #c3c3c3;
+  text-decoration: none;
+  font-variant: small-caps;
+}

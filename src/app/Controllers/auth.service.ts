@@ -14,7 +14,6 @@ export class AuthService {
 
   constructor(
     private firebaseAuth: AngularFireAuth,
-    private userService: UserService,
     private router: Router,
     private firestore: AngularFirestore
   ) {
@@ -26,7 +25,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(async (value) => {
         console.log('Success!', value);
-        await this.userService
+        await this
           .addUser(value.user.uid)
           .then((x) => console.log('User was added succesfully!'))
           .catch((x) => console.log(`There was an exception: ${x}`));
@@ -48,23 +47,19 @@ export class AuthService {
       });
   }
 
-  async authCheck() {
-    // return this.firebaseAuth.user.subscribe(async (x) => {
-    //   const ref = this.firestore
-    //     .collection('Users', (ref) => ref.where('userId', '==', x.uid))
-    //     .ref.get();
-    //   return (await ref).docs.values;
-    // });
-return this.user.subscribe(async x=>{
-  return (await this.firestore.collection('Users', (ref) => ref.where('userId', '==', x.uid)).get()).subscribe(x=>{x.docs.values});
-})
-   // console.log(this.user)
+  async addUser(uid: string){
+    const emptyUserProfile = {
+      userId: uid
+    };
+    const ref = await this.firestore.collection('Users').add(emptyUserProfile)
+    .then(x => {
+      console.log('Successfully create user profile');
+      this.router.navigate(['firstVisit']);
+    }).catch (x =>
+    console.log(`There was an error: ${x}`)
+    );
   }
 
-  async getSignatureById(id: string) {
-    const ref = this.firestore.doc<User>('Users/' + id).ref.get();
-    return (await ref).get('signature');
-  }
 
   logout() {
     this.firebaseAuth.signOut();

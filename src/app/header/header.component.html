@@ -6,10 +6,20 @@
   </div>
 
 
-    <div class='headerWelcome'>
+    <div class='headerWelcome' *ngIf="handlesLoaded">
+     
       <div class="icon">
+        
+  <span *ngFor="let handle of handles" class="handle">
+    <a [href]="'http://' + siteUrl + 'profile/' + handle.url">
+      <img [src]="handle.avatar" alt="" class="avatar">
+      {{ handle.handle }}
+  </a>
 
-        <span *ngIf="auth.user | async">{{ (auth.user | async)?.email }}</span> |
+  </span>
+       <br/>
+        <span *ngIf="auth.user | async">{{ (auth.user | async)?.email }}</span>
+         |
         <a mat-button *ngIf="auth.user | async" (click)="logOut()">log out </a>
 
 

@@ -1,10 +1,21 @@
 <h1 class="title">Login</h1>
 
-<div class="loginForm">
-  <form [formGroup]="loginForm">
+<div class="name" *ngIf="handlesLoaded && loggedIn; else loginForm">
+
+    <h3 *ngFor="let handle of handles">Welcome, {{ handle.handle }}</h3>
+    <p>You are already logged in.</p>
+
+
+</div>
+
+<div class="loginForm" #loginForm>
+
+
+
+  <form [formGroup]="loginForm" *ngIf="!loggedIn">
     <div class="loginInputs">
 
-<p *ngFor="let handle of handles | async">{{ handle.handle}}</p>
+
 
       <mat-form-field class="example-full-width" >
         <mat-label>Email</mat-label>
@@ -19,7 +30,7 @@
 
     <div class="loginActions">
       <button mat-button (click)="login()">Login</button>
-      <button mat-button (click)="authCheck()">Reset Password</button>
+      <button mat-button >Reset Password</button>
       <button mat-button (click)="create()">Sign Up</button>
     </div>
   </form>
